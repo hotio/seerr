@@ -1,6 +1,6 @@
 {
-  "description": "Releases",
-  "latest": true,
+  "description": "Every commit to develop",
+  "latest": false,
   "test_amd64": true,
   "test_arm64": true,
   "test_url": "http://localhost:5055",
@@ -8,5 +8,5 @@
   "upstream_digest_arm64": "sha256:5f5d6775ce10eeae54e514d3a21db321985cbc21d9a6e79defa69645acbdc583",
   "upstream_image": "ghcr.io/hotio/base",
   "upstream_tag": "alpinevpn",
-  "version": "2.7.3"
+  "version": "15356dfe496aef3ef6e6cf37b9fd359d1201a984"
 }

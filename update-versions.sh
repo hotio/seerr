@@ -1,5 +1,5 @@
 #!/bin/bash
-version=$(curl -u "${GITHUB_ACTOR}:${GITHUB_TOKEN}" -fsSL "https://api.github.com/repos/seerr-team/seerr/tags" | jq -re '.[0].name') || exit 1
+version=$(curl -u "${GITHUB_ACTOR}:${GITHUB_TOKEN}" -fsSL "https://api.github.com/repos/seerr-team/seerr/commits/develop" | jq -re .sha) || exit 1
 json=$(cat VERSION.json)
 jq --sort-keys \
     --arg version "${version//v/}" \
