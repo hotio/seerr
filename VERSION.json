@@ -1,0 +1,12 @@
+{
+  "description": "Releases",
+  "latest": true,
+  "test_amd64": true,
+  "test_arm64": true,
+  "test_url": "http://localhost:5055",
+  "upstream_digest_amd64": "sha256:b599383cefa8da299e55cf1c55ef75206937785d75b0fd8c02cd7b24862bfea4",
+  "upstream_digest_arm64": "sha256:5f5d6775ce10eeae54e514d3a21db321985cbc21d9a6e79defa69645acbdc583",
+  "upstream_image": "ghcr.io/hotio/base",
+  "upstream_tag": "alpinevpn",
+  "version": "2.7.3"
+}
