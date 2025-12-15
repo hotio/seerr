@@ -14,13 +14,13 @@
   "release": {
     "description": "Releases",
     "hide": false,
-    "last_updated": "2025-12-15T04:23:53.000Z",
-    "last_updated_url": "https://github.com/hotio/seerr/actions/runs/20220073917",
+    "last_updated": "2025-12-15T08:01:49.000Z",
+    "last_updated_url": "https://github.com/hotio/seerr/actions/runs/20223830893",
     "latest": true,
     "tags": [
       "release",
       "release-2.7.3",
-      "release-dfd30a3"
+      "release-6582d14"
     ]
   }
 }
