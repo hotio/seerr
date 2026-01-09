@@ -1,5 +1,5 @@
 ARG UPSTREAM_IMAGE
-ARG UPSTREAM_DIGEST_ARM64
+ARG UPSTREAM_TAG_SHA
 
 FROM node:22-alpine AS builder
 RUN apk add --no-cache curl build-base python3 sqlite && \
@@ -14,7 +14,7 @@ RUN mkdir /build && \
     pnpm cache delete
 
 
-FROM ${UPSTREAM_IMAGE}@${UPSTREAM_DIGEST_ARM64}
+FROM ${UPSTREAM_IMAGE}:${UPSTREAM_TAG_SHA}
 EXPOSE 5055
 ARG IMAGE_STATS
 ENV IMAGE_STATS=${IMAGE_STATS} WEBUI_PORTS="5055/tcp"
