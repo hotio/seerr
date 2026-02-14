@@ -3,7 +3,7 @@ ARG UPSTREAM_TAG_SHA
 
 FROM node:22-alpine AS builder
 RUN apk add --no-cache curl build-base python3 sqlite && \
-    npm install -g pnpm@9
+    npm install -g pnpm@10
 ARG VERSION
 ENV COMMIT_TAG=${VERSION}
 RUN mkdir /build && \
@@ -20,7 +20,7 @@ ARG IMAGE_STATS
 ENV IMAGE_STATS=${IMAGE_STATS} WEBUI_PORTS="5055/tcp"
 
 RUN apk add --no-cache nodejs npm && \
-    npm install -g pnpm@9
+    npm install -g pnpm@10
 
 COPY --from=builder /build/dist "${APP_DIR}/dist"
 COPY --from=builder /build/.next "${APP_DIR}/.next"
