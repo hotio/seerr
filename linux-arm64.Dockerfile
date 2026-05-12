@@ -13,14 +13,19 @@ RUN mkdir /build && \
     pnpm build && \
     pnpm cache delete
 
+FROM node:22-alpine AS node
 
 FROM ${UPSTREAM_IMAGE}:${UPSTREAM_TAG_SHA}
 EXPOSE 5055
 ARG IMAGE_STATS
 ENV IMAGE_STATS=${IMAGE_STATS} WEBUI_PORTS="5055/tcp"
 
-RUN apk add --no-cache nodejs npm && \
-    npm install -g pnpm@10
+COPY --from=node /usr/local/share /usr/local/share
+COPY --from=node /usr/local/lib /usr/local/lib
+COPY --from=node /usr/local/include /usr/local/include
+COPY --from=node /usr/local/bin /usr/local/bin
+
+RUN npm install -g pnpm@10
 
 COPY --from=builder /build/dist "${APP_DIR}/dist"
 COPY --from=builder /build/.next "${APP_DIR}/.next"
