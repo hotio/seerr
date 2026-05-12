@@ -1,7 +1,7 @@
 {
   "description": "Every commit to develop",
   "latest": false,
-  "packages_hash": "ac7db46b1143a39ff13d4615c3cf809d4390736d",
+  "packages_hash": "5e757c749d3e78dd438a5fa063dae7a2fe2dd22f",
   "test_amd64": true,
   "test_arm64": true,
   "test_url": "http://localhost:5055",
