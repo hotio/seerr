@@ -27,7 +27,7 @@ COPY --from=node /usr/local/lib /usr/local/lib
 COPY --from=node /usr/local/include /usr/local/include
 COPY --from=node /usr/local/bin /usr/local/bin
 
-RUN npm install -g pnpm@10
+RUN npm install -g pnpm@10.24.0
 
 COPY --from=builder /build/dist "${APP_DIR}/dist"
 COPY --from=builder /build/.next "${APP_DIR}/.next"
