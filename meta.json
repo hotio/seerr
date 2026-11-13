@@ -8,6 +8,6 @@
   "upstream_tag": "alpinevpn",
   "upstream_tag_sha": "alpinevpn-3e58ab0",
   "upstream_tag_sha__command": "json=$(cat meta.json) && upstream_image=$(jq -re '.upstream_image' <<< \"${json}\") && upstream_image_base=$(basename \"${upstream_image}\") && upstream_tag=$(jq -re '.upstream_tag' <<< \"${json}\") && tags_json=$(curl -fsSL ${GITHUB_TOKEN:+--header \"Authorization: Bearer ${GITHUB_TOKEN}\"} \"https://hotio.dev/containers/${upstream_image_base}-tags.json\") && commit_sha=$(jq -r --arg tag \"${upstream_tag}\" '.[$tag].commit_sha' <<< \"${tags_json}\") && upstream_tag_sha=${upstream_tag}-${commit_sha:0:7} && echo \"${upstream_tag_sha}\"",
-  "version": "a05a79787f52f483762c3fec3b7f6b485dd5dced",
+  "version": "e59ffce72dcde43105fb53cfc9eee9e5d0bfa34c",
   "version__command": "curl -fsSL ${GITHUB_TOKEN:+--header \"Authorization: Bearer ${GITHUB_TOKEN}\"} \"https://api.github.com/repos/seerr-team/seerr/commits/develop\" | jq -re '.sha'"
 }
